@@ -15,11 +15,11 @@ package-lock.json
 yarn.lock
 /node6
 /lib
-test/coverage.json
 temp/
 new-docs/
 puppeteer*.tgz
 docs-api-json/
 docs-dist/
+coverage
 website/docs
 docs/api.html

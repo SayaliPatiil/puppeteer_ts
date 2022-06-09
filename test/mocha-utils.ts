@@ -30,7 +30,6 @@ import utils from './utils.js';
 import rimraf from 'rimraf';
 import expect from 'expect';
 
-import { trackCoverage } from './coverage-utils.js';
 import Protocol from 'devtools-protocol';
 
 const setupServer = async () => {
@@ -224,15 +223,6 @@ export const describeChromeOnly = (
 ): Mocha.Suite | void => {
   if (isChrome) return describe(description, body);
 };
-
-let coverageHooks = {
-  beforeAll: (): void => {},
-  afterAll: (): void => {},
-};
-
-if (process.env['COVERAGE']) {
-  coverageHooks = trackCoverage();
-}
 
 console.log(
   `Running unit tests with:
