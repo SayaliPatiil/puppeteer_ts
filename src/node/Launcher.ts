@@ -359,11 +359,7 @@ class FirefoxLauncher implements ProductLauncher {
 
     await this._updateRevision();
     let firefoxExecutable = executablePath;
-    if (!executablePath) {
-      const { missingText, executablePath } = resolveExecutablePath(this);
-      if (missingText) throw new Error(missingText);
-      firefoxExecutable = executablePath;
-    }
+    
 
     if (!firefoxExecutable) {
       throw new Error('firefoxExecutable is not found.');
